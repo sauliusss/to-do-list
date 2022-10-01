@@ -1,0 +1,21 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sauliusss/to-do-list.git"
+  },
+  "keywords": [],
+  "author": "Saulius <sjsaulius@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sauliusss/to-do-list/issues"
+  },
+  "homepage": "https://github.com/sauliusss/to-do-list#readme"
+}
