@@ -18,6 +18,7 @@ function addTodo(event) {
   todoDiv.classList.add("todo");
   // sukurti li
   const newTodo = document.createElement("li");
+  //   virsuje pasirasys uzrasas hey
   newTodo.innerText = "hey";
   newTodo.classList.add("todo-item");
   // ikelti ta todo i li lista
