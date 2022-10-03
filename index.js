@@ -49,4 +49,17 @@ function addTodo(event) {
 
 // 2.
 
-function deleteCheck(e) {}
+function deleteCheck(e) {
+  const item = e.target;
+  // delete todo
+  if (item.classList[0] === "trash-btn") {
+    const todo = item.parentElement;
+    todo.remove();
+  }
+
+  // check mark
+  if (item.classList[0] === "complete-btn") {
+    const todo = item.parentElement;
+    todo.classList.toggle("completed");
+  }
+}
