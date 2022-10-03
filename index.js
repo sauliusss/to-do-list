@@ -4,11 +4,13 @@ const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
 
 // event listeners
-// kai paspaudziame cancelIdleCallback, pridedame todo
+// 1.kai paspaudziame cancelIdleCallback, pridedame todo
 todoButton.addEventListener("click", addTodo);
+// 2.
+todoList.addEventListener("click", deleteCheck);
 
 // functions
-// kadangi neturim addTodo, ji reikia sukurti
+// 1.kadangi neturim addTodo, ji reikia sukurti
 function addTodo(event) {
   // sita reikia rasyti, nes kai paspaudi addtodo refresinas puslapis, tai sitas padaro, kad nesirefresintu
   event.preventDefault();
@@ -19,7 +21,7 @@ function addTodo(event) {
   // sukurti li
   const newTodo = document.createElement("li");
   //   virsuje pasirasys uzrasas hey
-  newTodo.innerText = "hey";
+  newTodo.innerText = todoInput.value;
   newTodo.classList.add("todo-item");
   // ikelti ta todo i li lista
   todoDiv.appendChild(newTodo);
@@ -36,9 +38,15 @@ function addTodo(event) {
   // ides i button uzrasa ar zenkla
   trashButton.innerHTML = '<i class= "fas fa-trash"></i>';
   //   pridedam i klase
-  trashButton.classList.add("complete-btn");
+  trashButton.classList.add("trash-btn");
   //   sukuriam jam diva
   todoDiv.appendChild(trashButton);
   //   prideti viska i list ( apend to list)
   todoList.appendChild(todoDiv);
+  // kad issitrintu is inputo zodziai, kai paspaudi pliusa
+  todoInput.value = "";
 }
+
+// 2.
+
+function deleteCheck(e) {}
