@@ -54,7 +54,12 @@ function deleteCheck(e) {
   // delete todo
   if (item.classList[0] === "trash-btn") {
     const todo = item.parentElement;
-    todo.remove();
+    // animation
+    todo.classList.add("fall");
+    // sita funkcija pasileis, kai pasibaigs transition (css) laikas
+    todo.addEventListener("trasitionend", function () {
+      todo.remove();
+    });
   }
 
   // check mark
