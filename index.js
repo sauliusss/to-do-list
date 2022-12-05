@@ -2,12 +2,16 @@
 const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
+// filter
+const filterOption = document.querySelector(".filter-todo");
 
 // event listeners
 // 1.kai paspaudziame cancelIdleCallback, pridedame todo
 todoButton.addEventListener("click", addTodo);
 // 2.
 todoList.addEventListener("click", deleteCheck);
+// 3 filter
+filterOption.addEventListener("click", filterTodo);
 
 // functions
 // 1.kadangi neturim addTodo, ji reikia sukurti
@@ -67,4 +71,30 @@ function deleteCheck(e) {
     const todo = item.parentElement;
     todo.classList.toggle("completed");
   }
+}
+
+// 3. filter
+
+function filterTodo(e) {
+  const todos = todoList.childNodes;
+  todos.forEach(function (todo) {
+    switch (e.target.value) {
+      case "all":
+        todo.style.display = "flex";
+        break;
+      case "completed":
+        if (todo.classList.contains("completed")) {
+          todo.style.display = "flex";
+        } else {
+          todo.style.display = "none";
+        }
+        break;
+      case "uncompleted":
+        if (!todo.classList.contains("completed")) {
+          todo.style.display = "flex";
+        } else {
+          todo.style.display = "none";
+        }
+    }
+  });
 }
